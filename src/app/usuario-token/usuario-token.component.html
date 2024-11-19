@@ -1,0 +1,44 @@
+
+<div>
+    <p>Formulário dos usuários.</p>
+
+      <h3>Sign In:</h3>
+
+      <form  #loginDtoForm="ngForm" (ngSubmit)="getToken()">
+
+        <mat-form-field>
+            <mat-label>Login</mat-label>
+            <input matInput name="login" [(ngModel)]="loginDto.login" />
+            <mat-hint class="color">Required</mat-hint>
+        </mat-form-field>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput name="password" [(ngModel)]="loginDto.password" />
+            <mat-hint class="color">Required</mat-hint>
+        </mat-form-field>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <div>
+            <button mat-flat-button style="background-color:rgb(127, 143, 211);" type="submit" >Submit</button> 
+        </div>
+
+    </form>
+    <div *ngIf="buscaTokenResultado" >
+        <br/>
+        <div>
+            <textarea class="buscaTokenTextArea" readonly>{{respostaToken}}</textarea>
+            <div>
+                <button mat-flat-button style="background-color:rgb(127, 143, 211);" (click)="hidePanel()">Close</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button mat-flat-button style="background-color:rgb(127, 143, 211);" (click)="clearAllFields(loginDtoForm)" >Clean</button>
+            </div>
+            
+        </div>
+    </div>
+   
+</div>
+

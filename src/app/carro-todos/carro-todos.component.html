@@ -1,0 +1,27 @@
+
+<div>
+     
+    <h3>Listar Carros do Usuário:</h3>
+
+    <form  #todosCarrosForm="ngForm" (ngSubmit)="listarTodosCarrosPorUsuario()">
+
+        <div>
+            <button mat-flat-button style="background-color:rgb(127, 143, 211);" type="submit" >Submit</button> 
+        </div>
+
+    </form>
+
+    <div *ngIf="todosCarros" >
+        <br/>
+        <div>
+            <textarea class="todosCarrosTextArea" readonly>{{respostaTodosCarros}}</textarea>
+            <div>
+                <button mat-flat-button style="background-color:rgb(127, 143, 211);" (click)="hidePanel()">Close</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button mat-flat-button style="background-color:rgb(127, 143, 211);" (click)="clearAllFields(todosCarrosForm)" >Clean</button>
+            </div>
+            
+        </div>
+    </div>
+   
+</div>

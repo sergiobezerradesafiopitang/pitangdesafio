@@ -1,0 +1,60 @@
+
+<div>
+
+    <form  #cadastroCarroForm="ngForm" (ngSubmit)="cadastraCarroPorUsuario()">
+
+    <h3>Cadastrar Carro por Usuário:</h3>
+        
+    <br/>
+
+    <mat-form-field>
+    <mat-label>Year</mat-label>
+    <input matInput type="number" min="4" name="year" [(ngModel)]="carroDto.Year">
+    <mat-hint >Required</mat-hint>
+    </mat-form-field>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;
+
+    <mat-form-field>
+    <mat-label>Licence Plate</mat-label>
+    <input matInput name="license_plate" [(ngModel)]="carroDto.license_plate">
+    <mat-hint >Required</mat-hint>
+    </mat-form-field>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;
+
+    <mat-form-field>
+    <mat-label>Model</mat-label>
+    <input matInput name="model" [(ngModel)]="carroDto.model">
+    <mat-hint >Required</mat-hint>
+    </mat-form-field>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;
+
+    <mat-form-field>
+    <mat-label>Color</mat-label>
+    <input matInput name="color" [(ngModel)]="carroDto.color">
+    <mat-hint >Required</mat-hint>
+    </mat-form-field>
+
+    <div >
+        <button mat-flat-button style="background-color:rgb(127, 143, 211);" (click)="cadastraCarroPorUsuario()">Submit</button> 
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+
+    </form>
+
+    <div *ngIf="cadastroCarro" >
+        <br/>
+        <div>
+            <textarea class="cadastraCarroTextArea" readonly>{{carroCadastroResposta}}</textarea>
+            <div>
+                <button mat-flat-button style="background-color:rgb(127, 143, 211);" (click)="hidePanel()">Close</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button mat-flat-button style="background-color:rgb(127, 143, 211);" (click)="clearAllFields(cadastroCarroForm)" >Clean</button>
+            </div>
+            
+        </div>
+    </div>
+
+</div>

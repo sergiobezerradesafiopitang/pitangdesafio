@@ -1,0 +1,86 @@
+
+<div class="expansion">
+  <div><h1 class="title">Desafio Pitang</h1></div>
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          USUÁRIOS
+        </mat-panel-title>
+
+        <mat-panel-description>
+          Cadastro e consulta dos usuários.
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <app-usuario-token></app-usuario-token>
+
+      <br/><br/>
+
+      <app-usuario-cadastro></app-usuario-cadastro>
+
+      <br/><br/>
+
+      <app-usuario-todos></app-usuario-todos>
+
+      <br/><br/>
+
+      <app-usuario-por-id></app-usuario-por-id>
+
+      <br/><br/>
+
+      <app-usuario-atualiza></app-usuario-atualiza>
+      
+      <br/><br/>
+
+      <app-usuario-remover></app-usuario-remover>
+
+      <br/><br/>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          CARROS
+        </mat-panel-title>
+
+        <mat-panel-description>
+          Cadastro e consulta dos carros.
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <p>Formulário dos carros.</p>
+
+      <app-usuario-informacoes></app-usuario-informacoes>
+
+      <br/><br/>
+
+      <app-carro-cadastro></app-carro-cadastro>
+      
+     
+      <br/><br/>
+
+      <app-carro-todos></app-carro-todos>
+
+      <br/><br/>
+
+      <app-carros-por-id></app-carros-por-id>
+
+      <br/><br/>
+
+      <app-carro-atualiza></app-carro-atualiza>
+
+      <br/><br/>
+
+      <app-carro-remover></app-carro-remover>
+      
+      <br/><br/>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+
+<router-outlet /> 

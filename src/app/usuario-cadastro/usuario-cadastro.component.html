@@ -1,0 +1,118 @@
+<div>
+    
+    <h3>Cadastrar Usuário:</h3>
+
+    <form  #cadastroUsuarioForm="ngForm" (ngSubmit)="cadastrarUsuario()">
+        <mat-form-field >
+            <mat-label>First Name</mat-label>
+            <input matInput name="first_name" [(ngModel)]="usuarioDto.first_name"/>
+            <mat-hint class="color">Required</mat-hint>
+        </mat-form-field>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput name="last_name" [(ngModel)]="usuarioDto.last_name"/>
+            <mat-hint class="color">Required</mat-hint>
+        </mat-form-field>
+
+        <br/><br/>
+
+        <mat-form-field>
+            <mat-label>E-mail</mat-label>
+            <input matInput name="email" [(ngModel)]="usuarioDto.email"/>
+            <mat-hint class="color">Required</mat-hint>
+        </mat-form-field>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <mat-form-field>
+            <mat-label>Birthday</mat-label>
+            <input matInput [matDatepicker]="picker" name="birthday" [(ngModel)]="usuarioDto.birthday">
+            <mat-hint>Required MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        
+        <br/><br/>
+
+        <mat-form-field>
+            <mat-label>Login</mat-label>
+            <input matInput name="login" [(ngModel)]="usuarioDto.login"/>
+            <mat-hint class="color">Required</mat-hint>
+        </mat-form-field>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput name="password" [(ngModel)]="usuarioDto.password"/>
+            <mat-hint class="color">Required</mat-hint>
+        </mat-form-field>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <mat-form-field>
+            <mat-label>Phone</mat-label>
+            <input matInput name="phone" [(ngModel)]="usuarioDto.phone"/>
+            <mat-hint class="color">Required</mat-hint>
+        </mat-form-field>
+
+        <br/><br/><br/>
+
+        <mat-panel-title>
+            Carros:
+        </mat-panel-title>
+
+        <br/>
+    
+        <mat-form-field>
+            <mat-label>Year</mat-label>
+            <input matInput type="number" min="1" name="year" [(ngModel)]="carroDto.year"/>
+            <mat-hint class="color">Required</mat-hint>
+        </mat-form-field>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <mat-form-field>
+            <mat-label>Licence Plate</mat-label>
+            <input matInput name="license_plate" [(ngModel)]="carroDto.license_plate"/>
+            <mat-hint class="color">Required</mat-hint>
+        </mat-form-field>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <mat-form-field>
+            <mat-label>Model</mat-label>
+            <input matInput name="model" [(ngModel)]="carroDto.model"/>
+            <mat-hint class="color">Required</mat-hint>
+        </mat-form-field>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <mat-form-field>
+            <mat-label>Color</mat-label>
+            <input matInput name="color" [(ngModel)]="carroDto.color"/>
+            <mat-hint class="color">Required</mat-hint>
+        </mat-form-field>
+
+        <div >
+            <button mat-flat-button style="background-color:rgb(127, 143, 211);" (click)="cadastrarUsuario()">Submit</button> 
+        </div>
+    </form>
+
+    <div *ngIf="cadastraUsuario" >
+        <br/>
+        <div>
+            <textarea class="cadastroUsuarioTextArea" readonly>{{respostaCadastro}}</textarea>
+            <div>
+                <button mat-flat-button style="background-color:rgb(127, 143, 211);" (click)="hidePanel()">Close</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button mat-flat-button style="background-color:rgb(127, 143, 211);" (click)="clearAllFields(cadastroUsuarioForm)" >Clean</button>
+            </div>
+            
+        </div>
+    </div>
+
+</div>

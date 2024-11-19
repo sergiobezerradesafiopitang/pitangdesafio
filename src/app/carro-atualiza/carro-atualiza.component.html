@@ -1,0 +1,70 @@
+
+<div>
+
+    <form  #atualizaCarroForm="ngForm" (ngSubmit)="atualizarCarroDoUsuario()">
+
+        <h3>Atualizar Carro do Usuário por Id:</h3>
+            
+        <br/>
+
+        <mat-form-field>
+            <mat-label>Id Carro</mat-label>
+            <input matInput name="id_carro" [(ngModel)]="carroDto.id_carro" >
+            <mat-hint >Required</mat-hint>
+        </mat-form-field>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <mat-form-field>
+        <mat-label>Year</mat-label>
+        <input matInput type="number" min="4" name="year" [(ngModel)]="carroDto.Year">
+        <mat-hint >Required</mat-hint>
+        </mat-form-field>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <br/>
+
+        <mat-form-field>
+        <mat-label>Licence Plate</mat-label>
+        <input matInput name="license_plate" [(ngModel)]="carroDto.license_plate">
+        <mat-hint >Required</mat-hint>
+        </mat-form-field>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <mat-form-field>
+        <mat-label>Model</mat-label>
+        <input matInput name="model" [(ngModel)]="carroDto.model">
+        <mat-hint >Required</mat-hint>
+        </mat-form-field>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <mat-form-field>
+        <mat-label>Color</mat-label>
+        <input matInput name="color" [(ngModel)]="carroDto.color">
+        <mat-hint >Required</mat-hint>
+        </mat-form-field>
+
+        <div >
+            <button mat-flat-button style="background-color:rgb(127, 143, 211);" (click)="atualizarCarroDoUsuario()">Submit</button> 
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+    </form>
+
+    <div *ngIf="atualizaCarro" >
+        <br/>
+        <div>
+            <textarea class="atualizaCarroTextArea" readonly>{{carroCadastroResposta}}</textarea>
+            <div>
+                <button mat-flat-button style="background-color:rgb(127, 143, 211);" (click)="hidePanel()">Close</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button mat-flat-button style="background-color:rgb(127, 143, 211);" (click)="clearAllFields(atualizaCarroForm)" >Clean</button>
+            </div>
+            
+        </div>
+    </div>
+
+</div>
