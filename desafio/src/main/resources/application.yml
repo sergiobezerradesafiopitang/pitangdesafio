@@ -1,0 +1,47 @@
+
+server:
+  port: 8082
+
+spring:
+  application:
+    name: desafio
+  datasource:
+    url: jdbc:h2:mem:sistema
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  security:
+    oauth2:
+      client:
+        client-id: DESAFIO
+        grant-type: password
+        access-token-uri: http://localhost:8080/realms/DESAFIO/protocol/openid-connect/token
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/DESAFIO
+          jwk-set-uri: http://localhost:8080/realms/DESAFIO/protocol/openid-connect/certs
+
+
+jwt:
+  auth:
+    converter:
+      resource-id: DESAFIO
+      principal-attribute: principal_username
+  
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+
+
